@@ -1,0 +1,281 @@
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --success: #16a34a;
+  --error: #dc2626;
+  --bg: #f4f5f9;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --border: #e5e7eb;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: var(--primary);
+  color: white;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  padding-bottom: 4px;
+  opacity: 0.85;
+}
+
+.navbar-links a.active {
+  opacity: 1;
+  border-bottom: 2px solid white;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.page {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.choice-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.choice-btn {
+  flex: 1;
+  background: #eef2ff;
+  color: var(--primary-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 10px;
+}
+
+.choice-btn:hover:not(:disabled) {
+  background: #e0e7ff;
+}
+
+.choice-emoji {
+  font-size: 2rem;
+}
+
+.choice-emoji.large {
+  font-size: 3rem;
+  display: block;
+}
+
+.scoreboard .round-indicator {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.score-box {
+  flex: 1;
+  text-align: center;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.score-box.ties {
+  background: #fef3c7;
+}
+
+.score-name {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.score-value {
+  margin: 4px 0 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.reveal-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.reveal-vs {
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+.choice-name {
+  text-transform: capitalize;
+  color: #6b7280;
+  margin: 0;
+}
+
+.result-banner {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+.result-banner.tie {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.result-banner.player1,
+.result-banner.player2 {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.hint-text {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.error-text {
+  color: var(--error);
+  font-weight: 500;
+}
+
+.error-text.center {
+  text-align: center;
+}
+
+.status-text {
+  text-align: center;
+  color: #6b7280;
+}
+
+.status-text.success {
+  color: var(--success);
+}
+
+.status-text.error {
+  color: var(--error);
+}
+
+.final-score-text {
+  text-align: center;
+  font-weight: 600;
+}
+
+.recap-table,
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.recap-table th,
+.recap-table td,
+.history-table th,
+.history-table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.recap-table th,
+.history-table th {
+  background: #f9fafb;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
